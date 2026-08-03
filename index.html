@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- ?v= is a cache buster: bump it whenever style.css or main.js changes, so returning
      visitors can't run stale CSS/JS against fresh HTML. See README. -->
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
@@ -141,15 +141,25 @@
 
     <!-- Screenshots -->
     <div class="shots reveal">
-      <figure class="shot">
+      <figure class="shot shot-lead">
         <button class="shot-btn" data-full="media/launch-gameplay.jpg"
                 aria-label="Enlarge screenshot: Launch! gameplay">
-          <img src="media/launch-gameplay.jpg" width="1600" height="1090" loading="lazy" decoding="async"
-               alt="Launch! gameplay — the player flies through a dark storm biome above an ocean of pirate ships, with enemies suspended in the air ahead and a speed gauge filling down the left edge.">
+          <img src="media/launch-gameplay.jpg" width="1600" height="1093" loading="lazy" decoding="async"
+               alt="Launch! gameplay — the player rockets over a green castle landscape while five enemy types hang in the air ahead: a parachute rider, a life-ring, a rocket rider, a plane and a hammer. A HOLD prompt flashes on the right and a speed gauge fills down the left edge.">
         </button>
-        <figcaption><b>Mid-run.</b> Storm biome over the pirate ocean. The enemies hanging in the
-          air ahead are the whole game — each one is a hazard and a boost, depending on how fast
-          you hit it.</figcaption>
+        <figcaption><b>Mid-run.</b> Every enemy in the air ahead is both a hazard and a boost —
+          hit one fast enough and you take its rocket, plane or firework and keep the run alive.
+          The gauge down the left is the speed you're carrying.</figcaption>
+      </figure>
+
+      <figure class="shot">
+        <button class="shot-btn" data-full="media/launch-storm.jpg"
+                aria-label="Enlarge screenshot: Launch! storm biome">
+          <img src="media/launch-storm.jpg" width="1600" height="1090" loading="lazy" decoding="async"
+               alt="Launch! gameplay in a dark storm biome above an ocean of pirate ships, with enemies suspended in the air ahead.">
+        </button>
+        <figcaption><b>A later biome.</b> Break a destructible wall at speed and the world swaps
+          template mid-run — same treadmill, no loading break.</figcaption>
       </figure>
 
       <figure class="shot">
@@ -401,7 +411,6 @@
           experience. Built for crisp, predictable key handling — the kind of layer that makes
           a rhythm, typing or precision-platformer game feel tight instead of mushy.
         </p>
-        <p class="card-hint" id="kbHint">Psst — this site has keyboard shortcuts too. Press <kbd>?</kbd>.</p>
         <a class="btn btn-outline" href="https://www.roblox.com/games/126819865389590/Keyboard-Module" target="_blank" rel="noopener">
           View on Roblox
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -501,25 +510,6 @@
   </div>
 </footer>
 
-<!-- Shortcuts overlay -->
-<div class="sheet" id="sheet" hidden>
-  <div class="sheet-inner" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
-    <h3>Keyboard shortcuts</h3>
-    <ul>
-      <li><kbd>1</kbd><span>Top</span></li>
-      <li><kbd>2</kbd><span>Launch!</span></li>
-      <li><kbd>3</kbd><span>Other work</span></li>
-      <li><kbd>4</kbd><span>Systems</span></li>
-      <li><kbd>5</kbd><span>Contact</span></li>
-      <li><kbd>/</kbd><span>Search systems</span></li>
-      <li><kbd>C</kbd><span>Copy Discord</span></li>
-      <li><kbd>Esc</kbd><span>Close this</span></li>
-    </ul>
-    <p class="sheet-note">Because a keyboard module deserves a keyboard-first site.</p>
-    <button class="btn btn-sm btn-outline" id="sheetClose">Close</button>
-  </div>
-</div>
-
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
@@ -531,6 +521,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js?v=2"></script>
+<script src="main.js?v=3"></script>
 </body>
 </html>

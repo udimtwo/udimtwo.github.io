@@ -32,6 +32,11 @@
 
 *,*::before,*::after{ box-sizing:border-box; }
 
+/* Overlays below set `display:grid`, which outranks the UA stylesheet's
+   `[hidden]{display:none}` and leaves them visible on load. Keep this rule
+   above them so the hidden attribute always wins. */
+[hidden]{ display:none !important; }
+
 html{ scroll-behavior:smooth; scroll-padding-top:88px; }
 
 body{
@@ -326,10 +331,16 @@ a{ color:inherit; }
    Screenshots
    ============================================================ */
 .shots{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(330px,1fr));
+  display:grid;
+  /* min(100%, 420px) keeps this to two columns on desktop and one on mobile —
+     a 330px minimum yields three columns at 1180px and strands the second row. */
+  grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   gap:1.25rem; margin-bottom:3.5rem;
 }
 .shot{ margin:0; display:flex; flex-direction:column; gap:.85rem; }
+/* the lead gameplay shot spans the full row */
+.shot-lead{ grid-column:1 / -1; }
+.shot-lead figcaption{ font-size:.92rem; max-width:80ch; }
 
 .shot-btn{
   display:block; padding:0; width:100%; cursor:zoom-in;
@@ -672,30 +683,9 @@ code{
 .to-top:hover{ color:var(--ion); }
 
 /* ============================================================
-   Shortcuts sheet + toast
+   Toast
    ============================================================ */
-.sheet{
-  position:fixed; inset:0; z-index:200; display:grid; place-items:center;
-  background:rgba(3,4,8,.78); backdrop-filter:blur(8px);
-  animation:fade .2s var(--ease);
-}
 @keyframes fade{ from{ opacity:0; } }
-.sheet-inner{
-  width:min(100% - 2.5rem, 400px);
-  border:1px solid var(--line-2); border-radius:var(--r);
-  background:var(--panel); padding:1.75rem;
-  animation:pop .28s var(--ease) both;
-}
-.sheet-inner h3{ margin:0 0 1.25rem; font-size:1.15rem; letter-spacing:-.02em; }
-.sheet-inner ul{ margin:0 0 1.25rem; padding:0; list-style:none; display:grid; gap:.5rem; }
-.sheet-inner li{ display:flex; align-items:center; gap:.9rem; font-size:.88rem; color:var(--muted); }
-.sheet-note{ margin:0 0 1.25rem; font-size:.78rem; color:var(--dim); font-style:italic; }
-kbd{
-  font-family:var(--f-mono); font-size:.72rem; min-width:26px; text-align:center;
-  padding:.22rem .45rem; border-radius:6px; color:var(--text);
-  background:var(--panel-2); border:1px solid var(--line-2);
-  box-shadow:0 2px 0 rgba(0,0,0,.5);
-}
 
 .toast{
   position:fixed; left:50%; bottom:2rem; transform:translate(-50%, 130%);

@@ -37,8 +37,8 @@ running **new HTML against old CSS/JS**, which silently breaks whatever you just
 changed. So both are linked with a `?v=` query in `index.html`:
 
 ```html
-<link rel="stylesheet" href="style.css?v=2">
-<script src="main.js?v=2"></script>
+<link rel="stylesheet" href="style.css?v=3">
+<script src="main.js?v=3"></script>
 ```
 
 Increment both numbers whenever you change either file. Changing the query makes it

@@ -330,41 +330,21 @@ $('#lightboxClose').addEventListener('click', closeLightbox);
 lb.addEventListener('click', e => { if (!e.target.closest('.lightbox-inner')) closeLightbox(); });
 
 /* ============================================================
-   Keyboard shortcuts
+   Keys — Escape to dismiss, "/" to jump to the systems search
+   (the placeholder advertises it, so it stays discoverable)
    ============================================================ */
-const sheet = $('#sheet');
-const openSheet  = () => { sheet.hidden = false; };
-const closeSheet = () => { sheet.hidden = true;  };
-
-$('#sheetClose').addEventListener('click', closeSheet);
-sheet.addEventListener('click', e => { if (e.target === sheet) closeSheet(); });
-
-const JUMPS = { '1': '#top', '2': '#launch', '3': '#work', '4': '#systems', '5': '#contact' };
-
 addEventListener('keydown', e => {
   const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
 
   if (e.key === 'Escape') {
-    if (!lb.hidden)    { closeLightbox(); return; }
-    if (!sheet.hidden) { closeSheet();    return; }
+    if (!lb.hidden) { closeLightbox(); return; }
     if (typing) document.activeElement.blur();
     return;
   }
   if (typing || e.metaKey || e.ctrlKey || e.altKey) return;
-  if (!lb.hidden) return;   // don't scroll the page behind an open image
+  if (!lb.hidden) return;   // don't act on keys behind an open image
 
-  if (e.key === '?') { e.preventDefault(); sheet.hidden ? openSheet() : closeSheet(); return; }
-  if (e.key === '/') { e.preventDefault(); search.focus(); search.select(); return; }
-  if (e.key.toLowerCase() === 'c') {
-    const b = $('.copy-btn');
-    if (b) copyDiscord(b);
-    return;
-  }
-  const target = JUMPS[e.key];
-  if (target) {
-    e.preventDefault();
-    document.querySelector(target).scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
-  }
+  if (e.key === '/') { e.preventDefault(); search.focus(); search.select(); }
 });
 
 /* ============================================================
