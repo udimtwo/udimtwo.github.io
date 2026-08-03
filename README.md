@@ -29,6 +29,21 @@ build step, GitHub serves the files as-is.
 git add -A && git commit -m "Update site" && git push
 ```
 
+## After editing `style.css` or `main.js` — bump the cache buster
+
+GitHub Pages serves assets with a ~10 minute browser cache, but `index.html`
+revalidates on every load. Without a version marker a returning visitor can end up
+running **new HTML against old CSS/JS**, which silently breaks whatever you just
+changed. So both are linked with a `?v=` query in `index.html`:
+
+```html
+<link rel="stylesheet" href="style.css?v=2">
+<script src="main.js?v=2"></script>
+```
+
+Increment both numbers whenever you change either file. Changing the query makes it
+a new URL, so browsers must refetch. Editing only `index.html` needs no bump.
+
 ## Editing notes
 
 - **Systems grid** — edit the `SYSTEMS` array near the top of `main.js`. Each entry is
