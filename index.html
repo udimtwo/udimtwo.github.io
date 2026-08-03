@@ -137,6 +137,30 @@
       </div>
     </div>
 
+    <!-- Screenshots -->
+    <div class="shots reveal">
+      <figure class="shot">
+        <button class="shot-btn" data-full="media/launch-gameplay.jpg"
+                aria-label="Enlarge screenshot: Launch! gameplay">
+          <img src="media/launch-gameplay.jpg" width="1600" height="1090" loading="lazy" decoding="async"
+               alt="Launch! gameplay — the player flies through a dark storm biome above an ocean of pirate ships, with enemies suspended in the air ahead and a speed gauge filling down the left edge.">
+        </button>
+        <figcaption><b>Mid-run.</b> Storm biome over the pirate ocean. The enemies hanging in the
+          air ahead are the whole game — each one is a hazard and a boost, depending on how fast
+          you hit it.</figcaption>
+      </figure>
+
+      <figure class="shot">
+        <button class="shot-btn" data-full="media/launch-upgrades.jpg"
+                aria-label="Enlarge screenshot: Launch! player upgrades menu">
+          <img src="media/launch-upgrades.jpg" width="1600" height="1093" loading="lazy" decoding="async"
+               alt="Launch! player upgrades menu, showing a grid of upgrade tiles with levels out of 50, a detail panel for the Bounce Height upgrade, and a sidebar with Player Upgrades, Enemy Upgrades and a locked Ascension Tree.">
+        </button>
+        <figcaption><b>The upgrade layer.</b> Twelve player upgrades at fifty levels each, with
+          separate enemy tracks and an Ascension tree locked behind the first prestige.</figcaption>
+      </figure>
+    </div>
+
     <!-- Interactive demo -->
     <div class="demo reveal">
       <div class="demo-head">
@@ -259,6 +283,18 @@
           </div>
           <span class="card-badge">163 scripts</span>
         </header>
+
+        <figure class="shot shot-inline">
+          <button class="shot-btn" data-full="media/template-simulator.jpg"
+                  aria-label="Enlarge screenshot: +1 Speed Simulator Template">
+            <img src="media/template-simulator.jpg" width="1600" height="1087" loading="lazy" decoding="async"
+                 alt="+1 Speed Simulator Template in-game — rows of win-gated multiplier pads from x2 to x300, rebirth and trails buttons, a custom speed input, a timed starter pack offer, speed purchase buttons and a level progress bar.">
+          </button>
+          <figcaption>Most of the product in one frame: win-gated multiplier pads, rebirth at 54%,
+            trail and teleport menus, custom speed input, the timed starter pack, and the
+            auto-reconnect countdown running top-right.</figcaption>
+        </figure>
+
         <p class="card-lede">
           A complete, production-ready simulator built to be handed over and reskinned — not a
           prototype. Every system a live simulator needs, wired together and documented.
@@ -347,6 +383,17 @@
             <h3>Keyboard Module</h3>
           </div>
         </header>
+
+        <figure class="shot shot-inline">
+          <button class="shot-btn" data-full="media/keyboard-module.jpg"
+                  aria-label="Enlarge screenshot: Keyboard Module">
+            <img src="media/keyboard-module.jpg" width="1600" height="1085" loading="lazy" decoding="async"
+                 alt="The Keyboard Module test place — the player stands among four large grids of lettered keys rendered as physical parts, in stone, blue, green and red.">
+          </button>
+          <figcaption>The test place: four complete key sets built as live parts, so input timing
+            can be seen as well as measured.</figcaption>
+        </figure>
+
         <p class="card-lede">
           An input module for keyboard-driven Roblox games where response time is the whole
           experience. Built for crisp, predictable key handling — the kind of layer that makes
@@ -469,6 +516,15 @@
     <p class="sheet-note">Because a keyboard module deserves a keyboard-first site.</p>
     <button class="btn btn-sm btn-outline" id="sheetClose">Close</button>
   </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <figure class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Enlarged screenshot">
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCap"></figcaption>
+  </figure>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>

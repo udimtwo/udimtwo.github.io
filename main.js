@@ -301,6 +301,35 @@ function render() {
 render();
 
 /* ============================================================
+   Lightbox
+   ============================================================ */
+const lb      = $('#lightbox');
+const lbImg   = $('#lightboxImg');
+const lbCap   = $('#lightboxCap');
+let lbOpener  = null;
+
+function openLightbox(btn) {
+  const img = btn.querySelector('img');
+  lbImg.src = btn.dataset.full;
+  lbImg.alt = img ? img.alt : '';
+  const cap = btn.closest('figure')?.querySelector('figcaption');
+  lbCap.innerHTML = cap ? cap.innerHTML : '';
+  lb.hidden = false;
+  lbOpener = btn;
+  $('#lightboxClose').focus();
+}
+function closeLightbox() {
+  lb.hidden = true;
+  lbImg.src = '';
+  if (lbOpener) { lbOpener.focus(); lbOpener = null; }
+}
+
+$$('.shot-btn').forEach(b => b.addEventListener('click', () => openLightbox(b)));
+$('#lightboxClose').addEventListener('click', closeLightbox);
+// click the backdrop (but not the image itself) to dismiss
+lb.addEventListener('click', e => { if (!e.target.closest('.lightbox-inner')) closeLightbox(); });
+
+/* ============================================================
    Keyboard shortcuts
    ============================================================ */
 const sheet = $('#sheet');
@@ -316,11 +345,13 @@ addEventListener('keydown', e => {
   const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
 
   if (e.key === 'Escape') {
-    if (!sheet.hidden) { closeSheet(); return; }
+    if (!lb.hidden)    { closeLightbox(); return; }
+    if (!sheet.hidden) { closeSheet();    return; }
     if (typing) document.activeElement.blur();
     return;
   }
   if (typing || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (!lb.hidden) return;   // don't scroll the page behind an open image
 
   if (e.key === '?') { e.preventDefault(); sheet.hidden ? openSheet() : closeSheet(); return; }
   if (e.key === '/') { e.preventDefault(); search.focus(); search.select(); return; }
