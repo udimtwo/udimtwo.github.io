@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UDimTwo — Roblox Systems Engineer</title>
-<meta name="description" content="UDimTwo (Ryan) — solo Roblox developer. Custom physics engines, server-authoritative backends, live-ops and monetization systems. Available for commissions.">
+<title>UDimTwo — Roblox Scripter</title>
+<meta name="description" content="UDimTwo (Ryan) — Roblox scripter. Custom physics, data and saving, multiplayer, monetization. Available for commissions.">
 <meta name="theme-color" content="#05060a">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="UDimTwo — Roblox Systems Engineer">
-<meta property="og:description" content="Custom physics engines, server-authoritative backends, live-ops and monetization systems for Roblox.">
+<meta property="og:title" content="UDimTwo — Roblox Scripter">
+<meta property="og:description" content="Roblox scripter. Custom physics, data and saving, multiplayer, monetization.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- ?v= is a cache buster: bump it whenever style.css or main.js changes, so returning
      visitors can't run stale CSS/JS against fresh HTML. See README. -->
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
@@ -35,8 +35,8 @@
   </a>
 
   <nav class="nav-links" aria-label="Primary">
-    <a href="#work" data-nav>Work</a>
     <a href="#launch" data-nav>Launch!</a>
+    <a href="#work" data-nav>Work</a>
     <a href="#systems" data-nav>Systems</a>
     <a href="#contact" data-nav>Contact</a>
   </nav>
@@ -62,7 +62,7 @@
 
   <div class="wrap hero-inner">
     <p class="eyebrow reveal">
-      <span class="pulse"></span> Roblox Systems Engineer &middot; Solo Developer
+      <span class="pulse"></span> Roblox Scripter &middot; PST
     </p>
 
     <h1 class="hero-title reveal" data-delay="1">
@@ -70,14 +70,13 @@
     </h1>
 
     <p class="hero-sub reveal" data-delay="2">
-      I build the deep systems most Roblox games skip — bespoke physics engines,
-      server-authoritative persistence, cross-server multiplayer, and live-ops
-      economies that <em>keep working</em> after launch day.
+      I script Roblox games — custom physics, data and saving, multiplayer, monetization.
+      Happy starting from nothing or picking up an existing codebase.
     </p>
 
     <div class="hero-cta reveal" data-delay="3">
       <a class="btn btn-primary" href="#launch">
-        See the flagship
+        See my work
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <button class="btn btn-outline copy-btn" data-copy="udimtwo">
@@ -85,13 +84,6 @@
         <span class="copy-label">udimtwo</span>
       </button>
     </div>
-
-    <dl class="hero-stats reveal" data-delay="4">
-      <div><dt>Shipped projects</dt><dd><span class="count" data-to="3">0</span></dd></div>
-      <div><dt>Scripts, one codebase</dt><dd><span class="count" data-to="163">0</span></dd></div>
-      <div><dt>Movement states</dt><dd><span class="count" data-to="10">0</span></dd></div>
-      <div><dt>Physics engines written</dt><dd><span class="count" data-to="1">0</span><span class="unit">custom</span></dd></div>
-    </dl>
   </div>
 
   <div class="scroll-hint" aria-hidden="true"><span></span></div>
@@ -113,33 +105,26 @@
   </div>
 </div>
 
-<!-- ───────────────────────── LAUNCH! CASE STUDY ───────────────────────── -->
+<!-- ───────────────────────── LAUNCH! ───────────────────────── -->
 <section class="section" id="launch">
   <div class="wrap">
 
     <div class="sec-head reveal">
-      <span class="sec-index">01 — Flagship</span>
+      <span class="sec-index">Roblox game</span>
       <h2>Launch!</h2>
       <p class="sec-lede">
-        A solo-developed Roblox experience in the <em>launcher</em> genre. You're shot out of a
-        cannon, and everything after that is momentum management: slam to convert altitude into
-        speed, bounce off enemies, hijack their rockets, planes and fireworks, and hit destructible
-        walls fast enough to break into the next biome.
+        You get shot out of a cannon and everything after that is momentum. Slam to turn height
+        into speed, bounce off enemies, take their rockets and planes, and hit walls hard enough
+        to break into the next biome.
       </p>
       <div class="sec-actions">
         <a class="btn btn-primary" href="https://www.roblox.com/games/92546724840766/Launch" target="_blank" rel="noopener">
           Play Launch!
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <span class="tag-row">
-          <span class="tag">Solo developed</span>
-          <span class="tag">Custom engine</span>
-          <span class="tag">Live</span>
-        </span>
       </div>
     </div>
 
-    <!-- Screenshots -->
     <div class="shots reveal">
       <figure class="shot shot-lead">
         <button class="shot-btn" data-full="media/launch-gameplay.jpg"
@@ -147,9 +132,7 @@
           <img src="media/launch-gameplay.jpg" width="1600" height="1093" loading="lazy" decoding="async"
                alt="Launch! gameplay — the player rockets over a green castle landscape while five enemy types hang in the air ahead: a parachute rider, a life-ring, a rocket rider, a plane and a hammer. A HOLD prompt flashes on the right and a speed gauge fills down the left edge.">
         </button>
-        <figcaption><b>Mid-run.</b> Every enemy in the air ahead is both a hazard and a boost —
-          hit one fast enough and you take its rocket, plane or firework and keep the run alive.
-          The gauge down the left is the speed you're carrying.</figcaption>
+        <figcaption>Hit an enemy fast enough and you take its rocket, plane or firework.</figcaption>
       </figure>
 
       <figure class="shot">
@@ -158,8 +141,7 @@
           <img src="media/launch-storm.jpg" width="1600" height="1090" loading="lazy" decoding="async"
                alt="Launch! gameplay in a dark storm biome above an ocean of pirate ships, with enemies suspended in the air ahead.">
         </button>
-        <figcaption><b>A later biome.</b> Break a destructible wall at speed and the world swaps
-          template mid-run — same treadmill, no loading break.</figcaption>
+        <figcaption>Biomes swap mid-run, no loading break.</figcaption>
       </figure>
 
       <figure class="shot">
@@ -168,110 +150,57 @@
           <img src="media/launch-upgrades.jpg" width="1600" height="1093" loading="lazy" decoding="async"
                alt="Launch! player upgrades menu, showing a grid of upgrade tiles with levels out of 50, a detail panel for the Bounce Height upgrade, and a sidebar with Player Upgrades, Enemy Upgrades and a locked Ascension Tree.">
         </button>
-        <figcaption><b>The upgrade layer.</b> Twelve player upgrades at fifty levels each, with
-          separate enemy tracks and an Ascension tree locked behind the first prestige.</figcaption>
+        <figcaption>Player and enemy upgrade trees, plus prestige.</figcaption>
       </figure>
     </div>
 
-    <!-- Interactive demo -->
-    <div class="demo reveal">
-      <div class="demo-head">
-        <div>
-          <h3>The treadmill, live</h3>
-          <p>The player never actually moves. A virtual velocity vector drags a pool of four
-             recycled world chunks past a fixed point — which keeps the simulation stable at
-             absurd speeds and lets everyone share one server in parallel lanes.
-             <strong>Drag the throttle.</strong></p>
-        </div>
-        <button class="btn btn-sm btn-ghost" id="demoToggle" aria-pressed="true">Pause</button>
-      </div>
+    <h3 class="sub-head reveal">What's under it</h3>
 
-      <canvas id="treadmill" class="demo-canvas" role="img"
-              aria-label="Animated diagram of four world chunks recycling past a fixed player marker"></canvas>
-
-      <div class="demo-controls">
-        <label for="throttle">Throttle</label>
-        <input type="range" id="throttle" min="0" max="100" value="42" aria-describedby="demoReadout">
-        <div class="demo-readout" id="demoReadout">
-          <span><b id="rVel">0</b> studs/s</span>
-          <span><b id="rDist">0</b> studs travelled</span>
-          <span><b id="rRecycle">0</b> chunks recycled</span>
-          <span class="biome"><b id="rBiome">Grasslands</b></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Technical highlights -->
     <div class="tech-grid">
       <article class="tech reveal">
-        <span class="tech-n">01</span>
-        <h4>Custom physics simulation</h4>
-        <p>Bespoke velocity integration with per-map gravity, friction, bounciness, speed limits
-           and decay curves — all driven by a shared config that composes base constants with
-           player upgrades and prestige bonuses.</p>
+        <h4>Custom physics</h4>
+        <p>Own velocity integration with per-map gravity, friction, bounce and speed caps,
+           composed with upgrades and prestige bonuses.</p>
       </article>
       <article class="tech reveal">
-        <span class="tech-n">02</span>
-        <h4>Treadmill world streaming</h4>
-        <p>A four-chunk object pool recycled on <code>RenderStep</code>, with hot template
-           swapping so biome transitions happen mid-run with no loading break.</p>
+        <h4>Treadmill streaming</h4>
+        <p>The player never moves. Four pooled world chunks recycle past a fixed point on
+           <code>RenderStep</code>, templates hot-swapped for biome changes.</p>
       </article>
       <article class="tech reveal">
-        <span class="tech-n">03</span>
-        <h4>State machine architecture</h4>
-        <p>Ten movement states — Flying, Slamming, CloudCrash, WallState and five vehicle
-           states — registered against a central dispatcher.</p>
+        <h4>Ten movement states</h4>
+        <p>Flying, slamming, cloud crashes, wall carving and five vehicle states, all on one
+           dispatcher.</p>
       </article>
       <article class="tech reveal">
-        <span class="tech-n">04</span>
         <h4>Voxel destruction</h4>
-        <p>A custom voxelizer with an object cache for breakable walls; debris stays synced to
-           the treadmill so nothing drifts out of frame.</p>
+        <p>Custom voxelizer with an object cache for breakable walls; debris stays synced to
+           the treadmill.</p>
       </article>
       <article class="tech reveal">
-        <span class="tech-n">05</span>
-        <h4>Cross-server ranked duels</h4>
-        <p>MemoryStore queue + MessagingService pub/sub + TeleportService, with medal-based
-           ELO, match reconciliation and friend challenges.</p>
+        <h4>Cross-server duels</h4>
+        <p>MemoryStore queue, MessagingService and TeleportService, with medal-based ELO and
+           friend challenges.</p>
       </article>
       <article class="tech reveal">
-        <span class="tech-n">06</span>
-        <h4>Server-authoritative persistence</h4>
-        <p>A DataStore layer with schema reconciliation, legacy data migration, field
-           normalisation, retry logic, <code>UpdateAsync</code> merge-on-save, autosave and
+        <h4>Saving that holds up</h4>
+        <p>Schema migration, retry logic, <code>UpdateAsync</code> merge-on-save, autosave and
            <code>BindToClose</code> flushing.</p>
       </article>
       <article class="tech reveal">
-        <span class="tech-n">07</span>
-        <h4>Live-ops stack</h4>
-        <p>Global leaderboards, rotating featured deals, daily login and playtime rewards,
-           redeem codes, rewarded ads and gifting.</p>
+        <h4>Live-ops</h4>
+        <p>Global leaderboards, rotating deals, daily rewards, redeem codes, rewarded ads and
+           gifting.</p>
       </article>
       <article class="tech reveal">
-        <span class="tech-n">08</span>
-        <h4>Analytics instrumentation</h4>
-        <p>Rate-limited funnel tracking across eight progression paths, built for retention
-           and conversion analysis rather than vanity counts.</p>
+        <h4>Analytics</h4>
+        <p>Rate-limited funnel tracking across eight progression paths.</p>
       </article>
       <article class="tech reveal">
-        <span class="tech-n">09</span>
-        <h4>Shared-server multiplayer</h4>
-        <p>Per-player lane assignment with collision groups, so every player runs an
-           independent simulation inside the same server.</p>
+        <h4>Shared servers</h4>
+        <p>Per-player lanes with collision groups, so everyone runs an independent simulation in
+           the same server.</p>
       </article>
-    </div>
-
-    <!-- Scale numbers -->
-    <div class="scale reveal">
-      <h3 class="scale-title">Scope of the economy</h3>
-      <div class="scale-grid">
-        <div><b class="count" data-to="12">0</b><span>Player upgrades</span></div>
-        <div><b class="count" data-to="18">0</b><span>Enemy types, each with unlock &amp; upgrade tracks</span></div>
-        <div><b class="count" data-to="9">0</b><span>Maps</span></div>
-        <div><b class="count" data-to="2">0</b><span>Prestige layers — Ascension &amp; Sacrifice</span></div>
-        <div><b class="count" data-to="23">0</b><span>Monetised products</span></div>
-        <div><b class="count" data-to="8">0</b><span>Instrumented funnels</span></div>
-      </div>
     </div>
 
   </div>
@@ -281,16 +210,16 @@
 <section class="section section-alt" id="work">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-index">02 — Also shipped</span>
+      <span class="sec-index">Templates &amp; modules</span>
       <h2>Other work</h2>
     </div>
 
     <div class="work-grid">
 
-      <article class="card card-wide reveal">
+      <article class="card reveal">
         <header class="card-head">
           <div>
-            <span class="card-kind">Template / Product</span>
+            <span class="card-kind">Template</span>
             <h3>+1 Speed Simulator Template</h3>
           </div>
           <span class="card-badge">163 scripts</span>
@@ -302,96 +231,24 @@
             <img src="media/template-simulator.jpg" width="1600" height="1087" loading="lazy" decoding="async"
                  alt="+1 Speed Simulator Template in-game — rows of win-gated multiplier pads from x2 to x300, rebirth and trails buttons, a custom speed input, a timed starter pack offer, speed purchase buttons and a level progress bar.">
           </button>
-          <figcaption>Most of the product in one frame: win-gated multiplier pads, rebirth at 54%,
-            trail and teleport menus, custom speed input, the timed starter pack, and the
-            auto-reconnect countdown running top-right.</figcaption>
         </figure>
 
-        <p class="card-lede">
-          A complete, production-ready simulator built to be handed over and reskinned — not a
-          prototype. Every system a live simulator needs, wired together and documented.
-        </p>
+        <p class="card-lede">A finished simulator meant to be reskinned and shipped, not a prototype.</p>
 
-        <div class="feat-cols">
-          <div class="feat">
-            <h5>Core</h5>
-            <ul>
-              <li>Speed/XP earning while moving and on treadmills (4 &amp; 6 steps/sec)</li>
-              <li>Level system with a shared server/client XP curve</li>
-              <li>Rebirth with permanent XP multipliers</li>
-              <li>Six stacking multiplier sources on one base value</li>
-            </ul>
-          </div>
-          <div class="feat">
-            <h5>Progression</h5>
-            <ul>
-              <li>11-tier upgrade pad shop (×2 → ×300), own-many / equip-one</li>
-              <li>Per-player pad colouring and equipped indicator</li>
-              <li>Five premium treadmill tiers (3× / 9× / 25× / 100× / 1000×)</li>
-              <li>Win pads with normal and 2× premium payouts</li>
-              <li>Seven cosmetic trails with XP boosts</li>
-              <li>Checkpoints, revive points, spawn invincibility</li>
-            </ul>
-          </div>
-          <div class="feat">
-            <h5>Monetization</h5>
-            <ul>
-              <li>Auto-scaling speed packs (1k / 10k / 100k / 1M)</li>
-              <li>11-tier Robux multiplier ladder (×2 → ×2048)</li>
-              <li>Starter pack with countdown</li>
-              <li>Instant rebirth, revive and spin packs</li>
-              <li>Eight paid stage teleports</li>
-              <li>Five treadmill perks and Double Wins</li>
-              <li>Four troll effects with cross-server announcements</li>
-              <li>Single-file product config</li>
-            </ul>
-          </div>
-          <div class="feat">
-            <h5>Systems</h5>
-            <ul>
-              <li>ProfileStore data with session locking and migration</li>
-              <li>Global Speed &amp; Wins leaderboards with in-world rigs</li>
-              <li>8-slot spin wheel, server-authoritative RNG</li>
-              <li>Three-phase beam-guided tutorial</li>
-              <li>Group join and Roblox event RSVP rewards</li>
-              <li>Spectate panel, custom walk-speed input, speed coil</li>
-              <li>Toast notifications, confetti, AFK auto-reconnect</li>
-              <li>Cmdr admin console (6 commands)</li>
-              <li>Two AnalyticsService funnels</li>
-            </ul>
-          </div>
-        </div>
-
-        <footer class="card-foot">
-          <div class="arch">
-            <span class="arch-label">Architecture</span>
-            <div class="arch-row">
-              <span><b>163</b> scripts</span>
-              <span><b>25</b> services</span>
-              <span><b>31</b> controllers</span>
-              <span><b>6</b> configs</span>
-            </div>
-            <p class="arch-note">
-              Single <code>Script</code> + single <code>LocalScript</code> entry points ·
-              threaded controller boot with isolated failures · self-pruning RemoteEvent
-              registry · full documentation module included.
-            </p>
-          </div>
-          <div class="arch">
-            <span class="arch-label">Included content</span>
-            <p class="arch-note">
-              1 stage, 8 treadmills, 11 upgrade pads, 14 checkpoints, lobby and course
-              geometry, UI, sounds and VFX. Placeholder product IDs, ready to swap before
-              publishing.
-            </p>
-          </div>
-        </footer>
+        <ul class="spec">
+          <li>Levels, rebirth with permanent multipliers, six stacking multiplier sources</li>
+          <li>11-tier upgrade pad shop, five premium treadmill tiers, seven trails, win pads</li>
+          <li>Speed packs, a Robux multiplier ladder to ×2048, starter pack, stage teleports</li>
+          <li>ProfileStore with session locking, global leaderboards, spin wheel, tutorial,
+              Cmdr admin console</li>
+          <li>25 services, 31 controllers, single entry points, documented</li>
+        </ul>
       </article>
 
       <article class="card reveal">
         <header class="card-head">
           <div>
-            <span class="card-kind">Module / Tooling</span>
+            <span class="card-kind">Module</span>
             <h3>Keyboard Module</h3>
           </div>
         </header>
@@ -402,15 +259,13 @@
             <img src="media/keyboard-module.jpg" width="1600" height="1085" loading="lazy" decoding="async"
                  alt="The Keyboard Module test place — the player stands among four large grids of lettered keys rendered as physical parts, in stone, blue, green and red.">
           </button>
-          <figcaption>The test place: four complete key sets built as live parts, so input timing
-            can be seen as well as measured.</figcaption>
         </figure>
 
         <p class="card-lede">
-          An input module for keyboard-driven Roblox games where response time is the whole
-          experience. Built for crisp, predictable key handling — the kind of layer that makes
-          a rhythm, typing or precision-platformer game feel tight instead of mushy.
+          Input handling for keyboard-driven games, where response time is the whole experience.
+          Built to keep key handling tight and predictable.
         </p>
+
         <a class="btn btn-outline" href="https://www.roblox.com/games/126819865389590/Keyboard-Module" target="_blank" rel="noopener">
           View on Roblox
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -425,12 +280,9 @@
 <section class="section" id="systems">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-index">03 — Capabilities</span>
+      <span class="sec-index">Capabilities</span>
       <h2>Systems I build</h2>
-      <p class="sec-lede">
-        The common building blocks of a live Roblox game. Filter by category or search for
-        the thing you actually need.
-      </p>
+      <p class="sec-lede">Filter or search for what you need.</p>
     </div>
 
     <div class="filter reveal">
@@ -442,8 +294,7 @@
     </div>
 
     <div class="sys-grid" id="sysGrid"></div>
-    <p class="sys-empty" id="sysEmpty" hidden>No match — but ask anyway. Most of this is
-       transferable.</p>
+    <p class="sys-empty" id="sysEmpty" hidden>Nothing matches — ask anyway.</p>
   </div>
 </section>
 
@@ -451,12 +302,9 @@
 <section class="section section-alt" id="contact">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-index">04 — Get in touch</span>
-      <h2>Let's build something</h2>
-      <p class="sec-lede">
-        Open to commissions, contract work and long-term studio collaborations.
-        Bring me a system that sounds hard.
-      </p>
+      <span class="sec-index">Get in touch</span>
+      <h2>Contact</h2>
+      <p class="sec-lede">Open to commissions and contract work. Discord is fastest.</p>
     </div>
 
     <div class="contact-grid">
@@ -466,7 +314,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.6a18 18 0 0 1 4.3 1.4c-2-1.2-4-1.7-6-1.7a13.4 13.4 0 0 0-6 1.7 18 18 0 0 1 4.4-1.4L11.5 3a19.8 19.8 0 0 0-4.9 1.4C3.5 9 2.7 13.5 3.1 18a20 20 0 0 0 6 3l1.2-1.7c-1-.4-2-.9-2.8-1.5l.6-.5a14.2 14.2 0 0 0 12 0l.6.5c-.9.6-1.8 1.1-2.8 1.5l1.2 1.7a20 20 0 0 0 6-3c.5-5.2-.8-9.7-3.8-13.6ZM9.3 15.3c-1.2 0-2.1-1.1-2.1-2.4 0-1.3 1-2.4 2.1-2.4 1.2 0 2.2 1.1 2.2 2.4 0 1.3-1 2.4-2.2 2.4Zm5.4 0c-1.2 0-2.1-1.1-2.1-2.4 0-1.3.9-2.4 2.1-2.4 1.2 0 2.2 1.1 2.2 2.4 0 1.3-1 2.4-2.2 2.4Z"/></svg>
         </span>
         <span class="contact-body">
-          <span class="contact-label">Discord — best way to reach me</span>
+          <span class="contact-label">Discord</span>
           <span class="contact-value copy-label">udimtwo</span>
         </span>
         <span class="contact-action">Copy</span>
@@ -477,7 +325,7 @@
           <svg viewBox="0 0 24 24" fill="none"><rect x="4.2" y="2.6" width="15" height="15" rx="1" transform="rotate(12 4.2 2.6)" stroke="currentColor" stroke-width="1.8"/><rect x="9.4" y="9.1" width="5.4" height="5.4" rx=".6" transform="rotate(12 9.4 9.1)" fill="currentColor"/></svg>
         </span>
         <span class="contact-body">
-          <span class="contact-label">Roblox profile</span>
+          <span class="contact-label">Roblox</span>
           <span class="contact-value">@UDimTwo</span>
         </span>
         <span class="contact-action">Visit ↗</span>
@@ -490,9 +338,9 @@
         <span class="contact-body">
           <span class="contact-label">
             <span class="tz-dot" id="tzDot2"></span>
-            Based in <strong>PST</strong> — Pacific Time
+            <strong>PST</strong> — Pacific Time
           </span>
-          <span class="contact-value"><span id="tzTime2">--:--:--</span> <em id="tzState">my local time</em></span>
+          <span class="contact-value"><span id="tzTime2">--:--:--</span> <em id="tzState"></em></span>
         </span>
       </div>
 
@@ -504,8 +352,7 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <span>© <span id="year">2026</span> UDimTwo · Ryan</span>
-    <span class="footer-mid">Built from scratch — no template, no page builder.</span>
+    <span>© <span id="year">2026</span> UDimTwo</span>
     <a href="#top" class="to-top">Back to top ↑</a>
   </div>
 </footer>
@@ -521,6 +368,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js?v=3"></script>
+<script src="main.js?v=4"></script>
 </body>
 </html>

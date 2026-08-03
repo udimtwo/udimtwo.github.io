@@ -1,6 +1,6 @@
 # UDimTwo — portfolio
 
-Personal portfolio for **UDimTwo** (Ryan) — Roblox systems engineer.
+Personal portfolio for **UDimTwo** (Ryan) — Roblox scripter.
 
 Static site, no build step and no dependencies. Three files do everything:
 
@@ -8,7 +8,7 @@ Static site, no build step and no dependencies. Three files do everything:
 |---|---|
 | `index.html` | All content and structure |
 | `style.css` | Design system, layout, responsive rules |
-| `main.js` | Hero canvas, treadmill simulator, systems filter, PST clock, shortcuts |
+| `main.js` | Hero canvas, systems filter, screenshot lightbox, PST clock |
 
 ## Run it locally
 
