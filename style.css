@@ -564,15 +564,20 @@ code{
 @keyframes fade{ from{ opacity:0; } }
 
 .toast{
-  position:fixed; left:50%; bottom:2rem; transform:translate(-50%, 130%);
+  position:fixed; left:50%; bottom:2rem;
   z-index:210; padding:.7rem 1.2rem; border-radius:10px;
   background:var(--panel-2); border:1px solid var(--ok); color:var(--ok);
   font-family:var(--f-mono); font-size:.82rem;
   box-shadow:0 16px 40px -18px rgba(0,0,0,.9);
-  transition:transform .38s var(--ease);
   pointer-events:none;
+  /* Hide with opacity/visibility, not a percentage offset: the toast is empty
+     until a message arrives, and a % translate of an empty box is too small to
+     move it off screen — it used to sit at the bottom edge as a green sliver. */
+  transform:translate(-50%, 1rem);
+  opacity:0; visibility:hidden;
+  transition:transform .38s var(--ease), opacity .28s var(--ease), visibility .38s;
 }
-.toast.show{ transform:translate(-50%, 0); }
+.toast.show{ transform:translate(-50%, 0); opacity:1; visibility:visible; }
 
 /* ============================================================
    Reveal
