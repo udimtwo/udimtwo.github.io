@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- ?v= is a cache buster: bump it whenever style.css or main.js changes, so returning
      visitors can't run stale CSS/JS against fresh HTML. See README. -->
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
@@ -37,6 +37,7 @@
   <nav class="nav-links" aria-label="Primary">
     <a href="#launch" data-nav>Launch!</a>
     <a href="#idle" data-nav>Idle Breakout</a>
+    <a href="#flight" data-nav>Flight</a>
     <a href="#work" data-nav>Work</a>
     <a href="#systems" data-nav>Systems</a>
     <a href="#contact" data-nav>Contact</a>
@@ -157,52 +158,18 @@
 
     <h3 class="sub-head reveal">What's under it</h3>
 
-    <div class="tech-grid">
-      <article class="tech reveal">
-        <h4>Custom physics</h4>
-        <p>Own velocity integration with per-map gravity, friction, bounce and speed caps,
-           composed with upgrades and prestige bonuses.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Treadmill streaming</h4>
-        <p>The player never moves. Four pooled world chunks recycle past a fixed point on
-           <code>RenderStep</code>, templates hot-swapped for biome changes.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Ten movement states</h4>
-        <p>Flying, slamming, cloud crashes, wall carving and five vehicle states, all on one
-           dispatcher.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Voxel destruction</h4>
-        <p>Custom voxelizer with an object cache for breakable walls; debris stays synced to
-           the treadmill.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Cross-server duels</h4>
-        <p>MemoryStore queue, MessagingService and TeleportService, with medal-based ELO and
-           friend challenges.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Saving that holds up</h4>
-        <p>Schema migration, retry logic, <code>UpdateAsync</code> merge-on-save, autosave and
-           <code>BindToClose</code> flushing.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Live-ops</h4>
-        <p>Global leaderboards, rotating deals, daily rewards, redeem codes, rewarded ads and
-           gifting.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Analytics</h4>
-        <p>Rate-limited funnel tracking across eight progression paths.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Shared servers</h4>
-        <p>Per-player lanes with collision groups, so everyone runs an independent simulation in
-           the same server.</p>
-      </article>
-    </div>
+    <ul class="spec spec-grid reveal">
+      <li>Custom physics — per-map gravity, friction, bounce, speed caps</li>
+      <li>Treadmill world streaming, four pooled chunks, biomes swapped mid-run</li>
+      <li>Ten movement states on one dispatcher</li>
+      <li>Voxel destruction with an object cache</li>
+      <li>Cross-server ranked duels — MemoryStore, MessagingService, medal-based ELO</li>
+      <li>Server-authoritative saving — schema migration, <code>UpdateAsync</code>
+          merge-on-save, <code>BindToClose</code> flushing</li>
+      <li>Live-ops — leaderboards, rotating deals, daily rewards, codes, rewarded ads, gifting</li>
+      <li>Analytics funnels across eight progression paths</li>
+      <li>Shared servers — per-player lanes with collision groups</li>
+    </ul>
 
   </div>
 </section>
@@ -241,44 +208,68 @@
 
     <h3 class="sub-head reveal">What's under it</h3>
 
-    <div class="tech-grid">
-      <article class="tech reveal">
-        <h4>Instance-free simulation</h4>
-        <p>A fixed-timestep loop with circle-vs-AABB collision and a grid broadphase, talking
-           to the view only through signals — so the gameplay logic can be tested on its own.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Pooled rendering</h4>
-        <p>Every block, ball and effect is recycled, so render cost stays flat whether you own
-           five balls or four hundred.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Content as data</h4>
-        <p>Seven ball types — splash, homing, piercing, damage-over-time — and thirteen level
-           layouts are table entries, so adding either isn't a code change.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Server-authoritative purchases</h4>
-        <p>Idempotent receipt processing and game-pass verification; a purchase only reports as
-           granted once it has been durably written.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>An economy rule that can't regress</h4>
-        <p>Upgrade cost growth has to outpace effect growth or damage-per-dollar compounds and
-           the game trivialises itself. That's asserted at load time.</p>
-      </article>
-      <article class="tech reveal">
-        <h4>Built in the GUI layer</h4>
-        <p>No parts and no character. Positions live in a virtual space mapped through an
-           aspect-ratio constraint, so the board holds its shape on any screen.</p>
-      </article>
+    <ul class="spec spec-grid reveal">
+      <li>Instance-free simulation — fixed timestep, circle-vs-AABB, grid broadphase</li>
+      <li>Pooled rendering, flat cost at five balls or four hundred</li>
+      <li>Seven ball types and thirteen level layouts held as data</li>
+      <li>Server-authoritative purchases — idempotent receipts, pass verification</li>
+      <li>Economy invariant asserted at load time</li>
+      <li>Built entirely in the GUI layer — no parts, no character</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ───────────────────────── FLIGHT ───────────────────────── -->
+<section class="section" id="flight">
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="sec-index">Prototype</span>
+      <h2>Flight</h2>
+      <p class="sec-lede">
+        A flight prototype where you are the aircraft, not a vehicle. Six-axis character flight
+        over a procedurally generated neon city, built around a control model that binds the
+        camera to your input rather than to the physics body, so steering never lags behind you.
+      </p>
+      <div class="sec-actions">
+        <a class="btn btn-primary" href="https://www.roblox.com/games/71453215845368/Flight" target="_blank" rel="noopener">
+          Try Flight
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
     </div>
+
+    <div class="shots reveal">
+      <figure class="shot shot-lead">
+        <button class="shot-btn" data-full="media/flight.jpg"
+                aria-label="Enlarge screenshot: Flight">
+          <img src="media/flight.jpg" width="1600" height="855" loading="lazy" decoding="async"
+               alt="Flight gameplay — the player flies between tall grey towers trimmed with cyan, pink and yellow neon lines above a lit street grid, with a speed readout of 565 studs per second, an altitude of 1158, a boost meter and a control list on the left.">
+        </button>
+        <figcaption>565 studs/s over the generated skyline.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="sub-head reveal">What's under it</h3>
+
+    <ul class="spec spec-grid reveal">
+      <li>Custom flight controller — hold-to-fly, true hovering, momentum-based velocity,
+          bank-to-turn, afterburner, speed-scaled lateral thrust</li>
+      <li>Intent-driven camera — attitude tracked in its own frame, an
+          <code>AlignOrientation</code> constraint chases it on the rigid body, so collisions
+          stay physical without the solver sitting in the input path</li>
+      <li>Procedural city — 196 towers from a seeded RNG, downtown height falloff, neon trim,
+          lit street grid</li>
+      <li>Chase camera — occlusion raycasting, speed-scaled FOV and distance, scroll zoom kept
+          in sync with Roblox's default camera</li>
+    </ul>
 
   </div>
 </section>
 
 <!-- ───────────────────────── OTHER WORK ───────────────────────── -->
-<section class="section" id="work">
+<section class="section section-alt" id="work">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Templates &amp; modules</span>
@@ -348,7 +339,7 @@
 </section>
 
 <!-- ───────────────────────── SYSTEMS ───────────────────────── -->
-<section class="section section-alt" id="systems">
+<section class="section" id="systems">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Capabilities</span>
@@ -370,7 +361,7 @@
 </section>
 
 <!-- ───────────────────────── CONTACT ───────────────────────── -->
-<section class="section" id="contact">
+<section class="section section-alt" id="contact">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Get in touch</span>
@@ -439,6 +430,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js?v=6"></script>
+<script src="main.js?v=7"></script>
 </body>
 </html>
