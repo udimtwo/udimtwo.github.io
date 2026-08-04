@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- ?v= is a cache buster: bump it whenever style.css or main.js changes, so returning
      visitors can't run stale CSS/JS against fresh HTML. See README. -->
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
@@ -39,7 +39,6 @@
     <a href="#idle" data-nav>Idle Breakout</a>
     <a href="#flight" data-nav>Flight</a>
     <a href="#work" data-nav>Work</a>
-    <a href="#systems" data-nav>Systems</a>
     <a href="#contact" data-nav>Contact</a>
   </nav>
 
@@ -330,30 +329,8 @@
   </div>
 </section>
 
-<!-- ───────────────────────── SYSTEMS ───────────────────────── -->
-<section class="section" id="systems">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-index">Capabilities</span>
-      <h2>Systems I build</h2>
-      <p class="sec-lede">Filter or search for what you need.</p>
-    </div>
-
-    <div class="filter reveal">
-      <div class="filter-pills" id="pills" role="tablist" aria-label="Filter systems by category"></div>
-      <div class="filter-search">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="search" id="sysSearch" placeholder="Search systems…  (press /)" aria-label="Search systems">
-      </div>
-    </div>
-
-    <div class="sys-grid" id="sysGrid"></div>
-    <p class="sys-empty" id="sysEmpty" hidden>Nothing matches — ask anyway.</p>
-  </div>
-</section>
-
 <!-- ───────────────────────── CONTACT ───────────────────────── -->
-<section class="section section-alt" id="contact">
+<section class="section" id="contact">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Get in touch</span>
@@ -422,6 +399,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js?v=8"></script>
+<script src="main.js?v=9"></script>
 </body>
 </html>

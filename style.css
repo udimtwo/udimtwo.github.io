@@ -442,63 +442,8 @@ code{
   transform:rotate(45deg); opacity:.8;
 }
 
-/* ============================================================
-   Systems
-   ============================================================ */
-.filter{
-  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-  gap:1rem; margin-bottom:1.75rem;
-}
-.filter-pills{ display:flex; flex-wrap:wrap; gap:.45rem; }
-.pill{
-  font-family:var(--f-mono); font-size:.74rem; letter-spacing:.05em;
-  padding:.45rem .85rem; border-radius:99px; cursor:pointer;
-  border:1px solid var(--line); background:rgba(255,255,255,.02); color:var(--muted);
-  transition:.22s var(--ease);
-}
-.pill:hover{ color:var(--text); border-color:var(--line-2); }
-.pill[aria-selected="true"]{
-  background:var(--text); color:var(--bg); border-color:var(--text); font-weight:700;
-}
-.pill .n{ opacity:.55; margin-left:.35rem; }
-
-.filter-search{ position:relative; flex:1 1 230px; max-width:320px; }
-.filter-search svg{
-  position:absolute; left:.85rem; top:50%; transform:translateY(-50%);
-  width:15px; height:15px; color:var(--dim); pointer-events:none;
-}
-#sysSearch{
-  width:100%; font-family:var(--f-mono); font-size:.8rem;
-  padding:.62rem .9rem .62rem 2.35rem; color:var(--text);
-  background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:9px;
-  transition:border-color .2s, background .2s;
-}
-#sysSearch::placeholder{ color:var(--dim); }
-#sysSearch:focus{ outline:none; border-color:var(--ion); background:rgba(76,201,255,.05); }
-
-.sys-grid{
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(215px,1fr)); gap:.7rem;
-}
-.sys{
-  display:flex; align-items:flex-start; gap:.65rem;
-  padding:.9rem 1rem; border-radius:10px;
-  border:1px solid var(--line); background:var(--panel);
-  font-size:.87rem; line-height:1.4;
-  transition:border-color .25s, background .25s, transform .25s var(--ease);
-  animation:pop .32s var(--ease) both;
-}
-.sys:hover{ border-color:var(--line-2); background:var(--panel-2); transform:translateY(-2px); }
-.sys .dot{
-  width:6px; height:6px; border-radius:50%; margin-top:.5em; flex:none;
-  background:var(--c, var(--plasma)); box-shadow:0 0 8px var(--c, var(--plasma));
-}
-.sys .cat{
-  display:block; font-family:var(--f-mono); font-size:.62rem; letter-spacing:.1em;
-  text-transform:uppercase; color:var(--dim); margin-top:.25rem;
-}
+/* Used by the lightbox panel. */
 @keyframes pop{ from{ opacity:0; transform:translateY(8px) scale(.98); } }
-
-.sys-empty{ color:var(--muted); font-family:var(--f-mono); font-size:.85rem; padding:2rem 0; }
 
 /* ============================================================
    Contact
@@ -612,7 +557,6 @@ code{
   .tz-chip{ padding:.35rem .55rem; font-size:.68rem; }
   .tz-label{ display:none; }
   .hero-cta .btn{ flex:1 1 100%; }
-  .sys-grid{ grid-template-columns:1fr; }
 }
 
 @media (prefers-reduced-motion: reduce){

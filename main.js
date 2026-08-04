@@ -40,7 +40,7 @@ navLinks.addEventListener('click', e => {
   }
 });
 
-const sections = ['top', 'launch', 'idle', 'flight', 'work', 'systems', 'contact']
+const sections = ['top', 'launch', 'idle', 'flight', 'work', 'contact']
   .map(id => document.getElementById(id))
   .filter(Boolean);
 
@@ -141,140 +141,6 @@ async function copyDiscord(btn) {
 $$('.copy-btn').forEach(b => b.addEventListener('click', () => copyDiscord(b)));
 
 /* ============================================================
-   Systems grid
-   ============================================================ */
-const CATS = {
-  'Data & Backend': '#4cc9ff',
-  'Gameplay':       '#ff6b35',
-  'Progression':    '#a86bff',
-  'Monetization':   '#ffc94d',
-  'Multiplayer':    '#46e08a',
-  'UI & Feel':      '#ff5c8a',
-  'Live-Ops':       '#5ee0d0',
-  'Tooling':        '#93a1ff'
-};
-
-const SYSTEMS = [
-  ['ProfileStore / DataStore persistence', 'Data & Backend'],
-  ['Schema migration & versioning',        'Data & Backend'],
-  ['Session locking',                      'Data & Backend'],
-  ['Merge-on-save conflict resolution',    'Data & Backend'],
-  ['Server-authoritative validation',      'Data & Backend'],
-  ['Anti-exploit & remote hardening',      'Data & Backend'],
-  ['Rate-limited remote registries',       'Data & Backend'],
-  ['BindToClose flush & autosave',         'Data & Backend'],
-
-  ['Custom physics simulation',            'Gameplay'],
-  ['State machine movement',               'Gameplay'],
-  ['Voxel destruction',                    'Gameplay'],
-  ['Procedural world streaming',           'Gameplay'],
-  ['Object pooling & chunk recycling',     'Gameplay'],
-  ['Combat & hitbox systems',              'Gameplay'],
-  ['Vehicle & mount systems',              'Gameplay'],
-  ['Pet / companion systems',              'Gameplay'],
-  ['Tycoon & dropper systems',             'Gameplay'],
-  ['Obby checkpoints & respawn',           'Gameplay'],
-  ['Tool & weapon frameworks',             'Gameplay'],
-  ['NPC behaviour & pathfinding',          'Gameplay'],
-
-  ['XP curves & level systems',            'Progression'],
-  ['Rebirth & prestige layers',            'Progression'],
-  ['Multiplicative upgrade trees',         'Progression'],
-  ['Quest & mission chains',               'Progression'],
-  ['Daily rewards & login streaks',        'Progression'],
-  ['Battle / season passes',               'Progression'],
-  ['Collection & index systems',           'Progression'],
-  ['Achievements & badges',                'Progression'],
-
-  ['Developer product catalogs',           'Monetization'],
-  ['Gamepass gating',                      'Monetization'],
-  ['Starter packs & timed offers',         'Monetization'],
-  ['Rotating featured deals',              'Monetization'],
-  ['Robux multiplier ladders',             'Monetization'],
-  ['Rewarded ads',                         'Monetization'],
-  ['Gifting & cross-player purchases',     'Monetization'],
-  ['Receipt handling & grant safety',      'Monetization'],
-
-  ['Cross-server matchmaking',             'Multiplayer'],
-  ['ELO & ranked ladders',                 'Multiplayer'],
-  ['MemoryStore queues',                   'Multiplayer'],
-  ['MessagingService pub/sub',             'Multiplayer'],
-  ['TeleportService flows',                'Multiplayer'],
-  ['Parties & friend challenges',          'Multiplayer'],
-  ['Collision-group lane isolation',       'Multiplayer'],
-  ['Global OrderedDataStore leaderboards', 'Multiplayer'],
-  ['Spectate systems',                     'Multiplayer'],
-  ['Trading & secure exchange',            'Multiplayer'],
-
-  ['Responsive UI frameworks',             'UI & Feel'],
-  ['Shop & inventory interfaces',          'UI & Feel'],
-  ['Toast & notification systems',         'UI & Feel'],
-  ['Guided tutorial flows',                'UI & Feel'],
-  ['Settings & accessibility options',     'UI & Feel'],
-  ['VFX, confetti & screen juice',         'UI & Feel'],
-  ['Sound design integration',             'UI & Feel'],
-  ['Mobile & controller parity',           'UI & Feel'],
-
-  ['Analytics funnels & retention',        'Live-Ops'],
-  ['Redeem code systems',                  'Live-Ops'],
-  ['Remote config & feature flags',        'Live-Ops'],
-  ['A/B testing harnesses',                'Live-Ops'],
-  ['Event & seasonal content',             'Live-Ops'],
-  ['Group & RSVP reward hooks',            'Live-Ops'],
-  ['AFK detection & auto-reconnect',       'Live-Ops'],
-  ['Live balance tuning configs',          'Live-Ops'],
-
-  ['Cmdr admin consoles',                  'Tooling'],
-  ['Rojo + Git workflows',                 'Tooling'],
-  ['Service / controller boot frameworks', 'Tooling'],
-  ['Plugin & build automation',            'Tooling'],
-  ['Documentation modules',                'Tooling'],
-  ['Performance profiling & budgets',      'Tooling']
-];
-
-const grid   = $('#sysGrid');
-const pills  = $('#pills');
-const search = $('#sysSearch');
-const empty  = $('#sysEmpty');
-
-let activeCat = 'All';
-
-// pills
-const counts = SYSTEMS.reduce((m, [, c]) => (m[c] = (m[c] || 0) + 1, m), {});
-const catList = ['All', ...Object.keys(CATS)];
-pills.innerHTML = catList.map(c => `
-  <button class="pill" role="tab" data-cat="${c}" aria-selected="${c === 'All'}">
-    ${c}<span class="n">${c === 'All' ? SYSTEMS.length : counts[c] || 0}</span>
-  </button>`).join('');
-
-pills.addEventListener('click', e => {
-  const btn = e.target.closest('.pill');
-  if (!btn) return;
-  activeCat = btn.dataset.cat;
-  $$('.pill', pills).forEach(p => p.setAttribute('aria-selected', String(p === btn)));
-  render();
-});
-
-search.addEventListener('input', render);
-
-function render() {
-  const q = search.value.trim().toLowerCase();
-  const list = SYSTEMS.filter(([name, cat]) =>
-    (activeCat === 'All' || cat === activeCat) &&
-    (!q || name.toLowerCase().includes(q) || cat.toLowerCase().includes(q))
-  );
-
-  grid.innerHTML = list.map(([name, cat], i) => `
-    <div class="sys" style="--c:${CATS[cat]}; animation-delay:${Math.min(i * 14, 320)}ms">
-      <span class="dot"></span>
-      <span><span class="sys-name">${name}</span><span class="cat">${cat}</span></span>
-    </div>`).join('');
-
-  empty.hidden = list.length > 0;
-}
-render();
-
-/* ============================================================
    Lightbox
    ============================================================ */
 const lb      = $('#lightbox');
@@ -304,21 +170,14 @@ $('#lightboxClose').addEventListener('click', closeLightbox);
 lb.addEventListener('click', e => { if (!e.target.closest('.lightbox-inner')) closeLightbox(); });
 
 /* ============================================================
-   Keys — Escape to dismiss, "/" to jump to the systems search
-   (the placeholder advertises it, so it stays discoverable)
+   Escape closes the lightbox
    ============================================================ */
 addEventListener('keydown', e => {
-  const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
-
-  if (e.key === 'Escape') {
-    if (!lb.hidden) { closeLightbox(); return; }
-    if (typing) document.activeElement.blur();
-    return;
+  if (e.key !== 'Escape') return;
+  if (!lb.hidden) { closeLightbox(); return; }
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
+    document.activeElement.blur();
   }
-  if (typing || e.metaKey || e.ctrlKey || e.altKey) return;
-  if (!lb.hidden) return;   // don't act on keys behind an open image
-
-  if (e.key === '/') { e.preventDefault(); search.focus(); search.select(); }
 });
 
 /* ============================================================
