@@ -40,7 +40,7 @@ navLinks.addEventListener('click', e => {
   }
 });
 
-const sections = ['top', 'launch', 'work', 'systems', 'contact']
+const sections = ['top', 'launch', 'idle', 'work', 'systems', 'contact']
   .map(id => document.getElementById(id))
   .filter(Boolean);
 

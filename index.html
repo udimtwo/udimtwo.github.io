@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- ?v= is a cache buster: bump it whenever style.css or main.js changes, so returning
      visitors can't run stale CSS/JS against fresh HTML. See README. -->
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
@@ -36,6 +36,7 @@
 
   <nav class="nav-links" aria-label="Primary">
     <a href="#launch" data-nav>Launch!</a>
+    <a href="#idle" data-nav>Idle Breakout</a>
     <a href="#work" data-nav>Work</a>
     <a href="#systems" data-nav>Systems</a>
     <a href="#contact" data-nav>Contact</a>
@@ -206,8 +207,78 @@
   </div>
 </section>
 
+<!-- ───────────────────────── IDLE BREAKOUT ───────────────────────── -->
+<section class="section section-alt" id="idle">
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="sec-index">Roblox game</span>
+      <h2>Idle Breakout</h2>
+      <p class="sec-lede">
+        A recreation of the Coolmath Games idle classic, built entirely in Roblox's 2D GUI
+        layer — no parts, no character, no imported art. Balls break blocks on their own and
+        you reinvest into more balls, damage and speed, across an endless ladder of levels.
+      </p>
+      <div class="sec-actions">
+        <a class="btn btn-primary" href="https://www.roblox.com/games/87259589692104/Idle-Breakout" target="_blank" rel="noopener">
+          Play Idle Breakout
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="shots reveal">
+      <figure class="shot shot-lead">
+        <button class="shot-btn" data-full="media/idle-breakout.png"
+                aria-label="Enlarge screenshot: Idle Breakout">
+          <img src="media/idle-breakout.png" width="1692" height="1152" loading="lazy" decoding="async"
+               alt="Idle Breakout — a pixel-art board of coloured blocks labelled with health multipliers above an arena of roughly ninety bouncing balls. A top bar shows ball types, level 183 and tap damage, and a Welcome Back panel offers offline earnings.">
+        </button>
+        <figcaption>Level 183, with offline earnings on return. Every ball, block and effect
+          on screen is a pooled frame.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="sub-head reveal">What's under it</h3>
+
+    <div class="tech-grid">
+      <article class="tech reveal">
+        <h4>Instance-free simulation</h4>
+        <p>A fixed-timestep loop with circle-vs-AABB collision and a grid broadphase, talking
+           to the view only through signals — so the gameplay logic can be tested on its own.</p>
+      </article>
+      <article class="tech reveal">
+        <h4>Pooled rendering</h4>
+        <p>Every block, ball and effect is recycled, so render cost stays flat whether you own
+           five balls or four hundred.</p>
+      </article>
+      <article class="tech reveal">
+        <h4>Content as data</h4>
+        <p>Seven ball types — splash, homing, piercing, damage-over-time — and thirteen level
+           layouts are table entries, so adding either isn't a code change.</p>
+      </article>
+      <article class="tech reveal">
+        <h4>Server-authoritative purchases</h4>
+        <p>Idempotent receipt processing and game-pass verification; a purchase only reports as
+           granted once it has been durably written.</p>
+      </article>
+      <article class="tech reveal">
+        <h4>An economy rule that can't regress</h4>
+        <p>Upgrade cost growth has to outpace effect growth or damage-per-dollar compounds and
+           the game trivialises itself. That's asserted at load time.</p>
+      </article>
+      <article class="tech reveal">
+        <h4>Built in the GUI layer</h4>
+        <p>No parts and no character. Positions live in a virtual space mapped through an
+           aspect-ratio constraint, so the board holds its shape on any screen.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
 <!-- ───────────────────────── OTHER WORK ───────────────────────── -->
-<section class="section section-alt" id="work">
+<section class="section" id="work">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Templates &amp; modules</span>
@@ -277,7 +348,7 @@
 </section>
 
 <!-- ───────────────────────── SYSTEMS ───────────────────────── -->
-<section class="section" id="systems">
+<section class="section section-alt" id="systems">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Capabilities</span>
@@ -299,7 +370,7 @@
 </section>
 
 <!-- ───────────────────────── CONTACT ───────────────────────── -->
-<section class="section section-alt" id="contact">
+<section class="section" id="contact">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Get in touch</span>
@@ -368,6 +439,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js?v=5"></script>
+<script src="main.js?v=6"></script>
 </body>
 </html>
