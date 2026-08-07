@@ -304,57 +304,27 @@ a{ color:inherit; }
 .sec-lede{ margin:0; color:var(--muted); font-size:clamp(1rem,1.5vw,1.12rem); }
 .sec-lede em{ color:var(--text); font-style:italic; }
 
-.sec-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:1rem; margin-top:1.75rem; }
-
 /* ============================================================
-   Screenshots
+   Screenshot thumbnails (inside project cards)
    ============================================================ */
-.shots{
-  display:grid;
-  /* min(100%, 420px) keeps this to two columns on desktop and one on mobile —
-     a 330px minimum yields three columns at 1180px and strands the second row. */
-  grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr));
-  gap:1rem; margin-bottom:2rem;
-}
-.shot{ margin:0; display:flex; flex-direction:column; gap:.85rem; }
-/* the lead gameplay shot spans the full row */
-.shot-lead{ grid-column:1 / -1; }
-.shot-lead figcaption{ font-size:.92rem; max-width:80ch; }
-
 .shot-btn{
   display:block; padding:0; width:100%; cursor:zoom-in;
-  background:var(--panel); border:1px solid var(--line); border-radius:var(--r);
-  overflow:hidden; position:relative;
-  transition:border-color .3s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+  background:var(--bg-alt); border:0; overflow:hidden; position:relative;
 }
 .shot-btn img{
-  width:100%; height:auto; aspect-ratio:1600/1090; object-fit:cover;
-  display:block; transition:transform .55s var(--ease), filter .35s;
-  filter:saturate(1.02);
+  width:100%; height:100%; aspect-ratio:16/10; object-fit:cover;
+  display:block; transition:transform .55s var(--ease);
 }
-/* Paired shots share a fixed ratio so a row lines up. A lead shot stands alone,
-   so it keeps its own — Flight is far wider and would lose its HUD to the crop. */
-.shot-lead .shot-btn img{ aspect-ratio:auto; }
 .shot-btn::after{
-  content:"⤢"; position:absolute; right:.75rem; bottom:.7rem;
-  width:30px; height:30px; display:grid; place-items:center;
-  font-size:.95rem; border-radius:8px;
+  content:"⤢"; position:absolute; right:.6rem; bottom:.55rem;
+  width:28px; height:28px; display:grid; place-items:center;
+  font-size:.9rem; border-radius:8px;
   background:rgba(5,6,10,.72); border:1px solid var(--line-2); color:var(--text);
   backdrop-filter:blur(6px);
   opacity:0; transform:translateY(6px); transition:.3s var(--ease);
 }
-.shot-btn:hover{
-  border-color:var(--line-2); transform:translateY(-3px);
-  box-shadow:0 26px 55px -34px rgba(0,0,0,.95);
-}
-.shot-btn:hover img{ transform:scale(1.035); }
+.shot-btn:hover img{ transform:scale(1.04); }
 .shot-btn:hover::after{ opacity:1; transform:none; }
-
-.shot figcaption{ font-size:.86rem; color:var(--muted); line-height:1.55; }
-.shot figcaption b{ color:var(--text); font-weight:600; }
-
-.shot-inline{ margin-bottom:1.75rem; }
-.shot-inline figcaption{ font-size:.82rem; }
 
 /* ============================================================
    Lightbox
@@ -408,29 +378,40 @@ code{
 }
 
 /* ============================================================
-   Work cards
+   Project cards
    ============================================================ */
-.work-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px),1fr)); gap:1.5rem; align-items:start; }
-
-.card{
-  border:1px solid var(--line); border-radius:var(--r);
-  background:var(--panel); padding:1.9rem 1.75rem;
-  transition:border-color .3s, transform .3s var(--ease);
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(min(100%, 430px), 1fr));
+  gap:1.25rem;
+  /* stretch, not start: cards in a row match height, and margin-top:auto on the
+     button then lines the calls-to-action up across the row */
 }
-.card:hover{ border-color:var(--line-2); }
+.proj{
+  display:flex; flex-direction:column; overflow:hidden;
+  border:1px solid var(--line); border-radius:var(--r); background:var(--panel);
+  transition:border-color .3s var(--ease), transform .3s var(--ease);
+}
+.proj:hover{ border-color:var(--line-2); transform:translateY(-2px); }
+/* the first card runs the full width and carries three thumbnails */
+.proj-wide{ grid-column:1 / -1; }
 
-.card-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:1.25rem; margin-bottom:1rem; }
+.proj-shots{ display:grid; grid-template-columns:1fr; gap:1px; background:var(--line); }
+.proj-wide .proj-shots{ grid-template-columns:repeat(3, 1fr); }
+
+.proj-body{
+  display:flex; flex-direction:column; align-items:flex-start; gap:.7rem;
+  padding:1.35rem 1.4rem 1.45rem; flex:1;
+}
+.proj-body h3{ margin:0; font-size:1.32rem; letter-spacing:-.03em; }
+.proj-lede{ margin:0; color:var(--muted); font-size:.92rem; }
+.proj-body .spec{ width:100%; margin:.15rem 0 .4rem; }
+.proj-body .btn{ margin-top:auto; }
+
 .card-kind{
-  display:block; font-family:var(--f-mono); font-size:.68rem; letter-spacing:.15em;
-  text-transform:uppercase; color:var(--heat); margin-bottom:.5rem;
+  display:block; font-family:var(--f-mono); font-size:.66rem; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--heat);
 }
-.card-head h3{ margin:0; font-size:clamp(1.4rem,3vw,1.9rem); letter-spacing:-.03em; }
-.card-badge{
-  flex:none; font-family:var(--f-mono); font-size:.72rem; color:var(--ion);
-  border:1px solid rgba(76,201,255,.28); background:rgba(76,201,255,.07);
-  padding:.35rem .7rem; border-radius:99px;
-}
-.card-lede{ margin:0 0 1.25rem; color:var(--muted); max-width:72ch; }
 
 .spec{ margin:0; padding:0; list-style:none; display:grid; gap:.55rem; }
 .spec li{
@@ -551,6 +532,11 @@ code{
   .hero{ padding-top:7rem; }
   .card{ padding:1.5rem 1.25rem; }
   .contact-card{ padding:1.25rem; }
+}
+
+@media (max-width: 640px){
+  /* three across becomes ~110px wide on a phone — unreadable, so stack them */
+  .proj-wide .proj-shots{ grid-template-columns:1fr; }
 }
 
 @media (max-width: 480px){

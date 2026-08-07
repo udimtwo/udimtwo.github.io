@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- ?v= is a cache buster: bump it whenever style.css or main.js changes, so returning
      visitors can't run stale CSS/JS against fresh HTML. See README. -->
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
@@ -35,10 +35,6 @@
   </a>
 
   <nav class="nav-links" aria-label="Primary">
-    <a href="#launch" data-nav>Launch!</a>
-    <a href="#idle" data-nav>Idle Breakout</a>
-    <a href="#flight" data-nav>Flight</a>
-    <a href="#movement" data-nav>Movement</a>
     <a href="#work" data-nav>Work</a>
     <a href="#contact" data-nav>Contact</a>
   </nav>
@@ -77,7 +73,7 @@
     </p>
 
     <div class="hero-cta reveal" data-delay="3">
-      <a class="btn btn-primary" href="#launch">
+      <a class="btn btn-primary" href="#work">
         See my work
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -107,267 +103,188 @@
   </div>
 </div>
 
-<!-- ───────────────────────── LAUNCH! ───────────────────────── -->
-<section class="section" id="launch">
-  <div class="wrap">
-
-    <div class="sec-head reveal">
-      <span class="sec-index">Roblox game</span>
-      <h2>Launch!</h2>
-      <p class="sec-lede">
-        You get shot out of a cannon and everything after is momentum. Slam to turn height into
-        speed, take enemies' rockets and planes, break through walls into the next biome.
-      </p>
-      <div class="sec-actions">
-        <a class="btn btn-primary" href="https://www.roblox.com/games/92546724840766/Launch" target="_blank" rel="noopener">
-          Play Launch!
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="shots reveal">
-      <figure class="shot shot-lead">
-        <button class="shot-btn" data-full="media/launch-gameplay.jpg"
-                aria-label="Enlarge screenshot: Launch! gameplay">
-          <img src="media/launch-gameplay.jpg" width="1600" height="1093" loading="lazy" decoding="async"
-               alt="Launch! gameplay — the player rockets over a green castle landscape while five enemy types hang in the air ahead: a parachute rider, a life-ring, a rocket rider, a plane and a hammer. A HOLD prompt flashes on the right and a speed gauge fills down the left edge.">
-        </button>
-        <figcaption>Hit an enemy fast enough and you take its rocket, plane or firework.</figcaption>
-      </figure>
-
-      <figure class="shot">
-        <button class="shot-btn" data-full="media/launch-storm.jpg"
-                aria-label="Enlarge screenshot: Launch! storm biome">
-          <img src="media/launch-storm.jpg" width="1600" height="1090" loading="lazy" decoding="async"
-               alt="Launch! gameplay in a dark storm biome above an ocean of pirate ships, with enemies suspended in the air ahead.">
-        </button>
-        <figcaption>Biomes swap mid-run, no loading break.</figcaption>
-      </figure>
-
-      <figure class="shot">
-        <button class="shot-btn" data-full="media/launch-upgrades.jpg"
-                aria-label="Enlarge screenshot: Launch! player upgrades menu">
-          <img src="media/launch-upgrades.jpg" width="1600" height="1093" loading="lazy" decoding="async"
-               alt="Launch! player upgrades menu, showing a grid of upgrade tiles with levels out of 50, a detail panel for the Bounce Height upgrade, and a sidebar with Player Upgrades, Enemy Upgrades and a locked Ascension Tree.">
-        </button>
-        <figcaption>Player and enemy upgrade trees, plus prestige.</figcaption>
-      </figure>
-    </div>
-
-    <ul class="spec spec-grid reveal">
-      <li>Custom physics — per-map gravity, friction, bounce, speed caps</li>
-      <li>Treadmill world streaming, four pooled chunks, biomes swapped mid-run</li>
-      <li>Ten movement states on one dispatcher</li>
-      <li>Voxel destruction with an object cache</li>
-      <li>Cross-server ranked duels — MemoryStore, MessagingService, medal-based ELO</li>
-      <li>Server-authoritative saving — schema migration, <code>UpdateAsync</code>
-          merge-on-save, <code>BindToClose</code> flushing</li>
-      <li>Live-ops — leaderboards, rotating deals, daily rewards, codes, rewarded ads, gifting</li>
-      <li>Analytics funnels across eight progression paths</li>
-      <li>Shared servers — per-player lanes with collision groups</li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- ───────────────────────── IDLE BREAKOUT ───────────────────────── -->
-<section class="section section-alt" id="idle">
-  <div class="wrap">
-
-    <div class="sec-head reveal">
-      <span class="sec-index">Roblox game</span>
-      <h2>Idle Breakout</h2>
-      <p class="sec-lede">
-        A recreation of the Coolmath Games idle classic, built entirely in Roblox's 2D GUI
-        layer — no parts, no character, no imported art. Balls break blocks on their own; you
-        reinvest into more balls, damage and speed.
-      </p>
-      <div class="sec-actions">
-        <a class="btn btn-primary" href="https://www.roblox.com/games/87259589692104/Idle-Breakout" target="_blank" rel="noopener">
-          Play Idle Breakout
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="shots reveal">
-      <figure class="shot shot-lead">
-        <button class="shot-btn" data-full="media/idle-breakout.png"
-                aria-label="Enlarge screenshot: Idle Breakout">
-          <img src="media/idle-breakout.png" width="1692" height="1152" loading="lazy" decoding="async"
-               alt="Idle Breakout — a pixel-art board of coloured blocks labelled with health multipliers above an arena of roughly ninety bouncing balls. A top bar shows ball types, level 183 and tap damage, and a Welcome Back panel offers offline earnings.">
-        </button>
-        <figcaption>Level 183, with offline earnings on return. Every ball, block and effect
-          on screen is a pooled frame.</figcaption>
-      </figure>
-    </div>
-
-    <ul class="spec spec-grid reveal">
-      <li>Instance-free simulation — fixed timestep, circle-vs-AABB, grid broadphase</li>
-      <li>Pooled rendering, flat cost at five balls or four hundred</li>
-      <li>Seven ball types and thirteen level layouts held as data</li>
-      <li>Server-authoritative purchases — idempotent receipts, pass verification</li>
-      <li>Economy invariant asserted at load time</li>
-      <li>Built entirely in the GUI layer — no parts, no character</li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- ───────────────────────── FLIGHT ───────────────────────── -->
-<section class="section" id="flight">
-  <div class="wrap">
-
-    <div class="sec-head reveal">
-      <span class="sec-index">Prototype</span>
-      <h2>Flight</h2>
-      <p class="sec-lede">
-        A flight prototype where you are the aircraft, not a vehicle. Six-axis character flight
-        over a procedural neon city, with the camera bound to your input rather than the physics
-        body, so steering never lags behind you.
-      </p>
-      <div class="sec-actions">
-        <a class="btn btn-primary" href="https://www.roblox.com/games/71453215845368/Flight" target="_blank" rel="noopener">
-          Try Flight
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="shots reveal">
-      <figure class="shot shot-lead">
-        <button class="shot-btn" data-full="media/flight.jpg"
-                aria-label="Enlarge screenshot: Flight">
-          <img src="media/flight.jpg" width="1600" height="855" loading="lazy" decoding="async"
-               alt="Flight gameplay — the player flies between tall grey towers trimmed with cyan, pink and yellow neon lines above a lit street grid, with a speed readout of 565 studs per second, an altitude of 1158, a boost meter and a control list on the left.">
-        </button>
-        <figcaption>565 studs/s over the generated skyline.</figcaption>
-      </figure>
-    </div>
-
-    <ul class="spec spec-grid reveal">
-      <li>Custom flight controller — hold-to-fly, true hovering, momentum-based velocity,
-          bank-to-turn, afterburner, speed-scaled lateral thrust</li>
-      <li>Intent-driven camera — attitude tracked in its own frame, an
-          <code>AlignOrientation</code> constraint chases it on the rigid body, so collisions
-          stay physical without the solver sitting in the input path</li>
-      <li>Procedural city — 196 towers from a seeded RNG, downtown height falloff, neon trim,
-          lit street grid</li>
-      <li>Chase camera — occlusion raycasting, speed-scaled FOV and distance, scroll zoom kept
-          in sync with Roblox's default camera</li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- ───────────────────────── MOMENTUM MOVEMENT ───────────────────────── -->
-<section class="section section-alt" id="movement">
-  <div class="wrap">
-
-    <div class="sec-head reveal">
-      <span class="sec-index">System</span>
-      <h2>Momentum Movement</h2>
-      <p class="sec-lede">
-        A first-person controller that replaces Roblox's Humanoid physics entirely, for
-        momentum-based FPS movement in the Source lineage.
-      </p>
-      <div class="sec-actions">
-        <a class="btn btn-primary" href="https://www.roblox.com/games/115827296371939/Rivals-Movement-System" target="_blank" rel="noopener">
-          Try the movement
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="shots reveal">
-      <figure class="shot shot-lead">
-        <button class="shot-btn" data-full="media/movement.jpg"
-                aria-label="Enlarge screenshot: Momentum Movement test place">
-          <img src="media/movement.jpg" width="1600" height="975" loading="lazy" decoding="async"
-               alt="The movement system's test place — a character on a green baseplate beside stepped grey ramps used for slope traversal testing, with two players connected.">
-        </button>
-        <figcaption>The slope and ramp testbed.</figcaption>
-      </figure>
-    </div>
-
-    <ul class="spec spec-grid reveal">
-      <li>Humanoid state machine disabled, character physics rebuilt — custom gravity,
-          single-box collider, P-controller hover for ground contact and slopes</li>
-      <li>Quake/Source-style air strafing, slide chaining and slope acceleration — chains build
-          22 → ~45 studs/s and converge instead of running away</li>
-      <li>Framerate-independent deceleration — friction and camera springs solved in closed
-          form, identical at 30, 60 and 240 fps</li>
-      <li>First-person camera — speed-scaled FOV, strafe roll, spring-damped landing impacts,
-          distance-phased head bob, with no writes to player aim</li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- ───────────────────────── OTHER WORK ───────────────────────── -->
+<!-- ───────────────────────── WORK ───────────────────────── -->
 <section class="section" id="work">
   <div class="wrap">
+
     <div class="sec-head reveal">
-      <span class="sec-index">Templates &amp; modules</span>
-      <h2>Other work</h2>
+      <span class="sec-index">Work</span>
+      <h2>What I've built</h2>
     </div>
 
-    <div class="work-grid">
+    <div class="proj-grid">
 
-      <article class="card reveal">
-        <header class="card-head">
-          <div>
-            <span class="card-kind">Template</span>
-            <h3>+1 Speed Simulator Template</h3>
-          </div>
-          <span class="card-badge">163 scripts</span>
-        </header>
-
-        <figure class="shot shot-inline">
-          <button class="shot-btn" data-full="media/template-simulator.jpg"
-                  aria-label="Enlarge screenshot: +1 Speed Simulator Template">
-            <img src="media/template-simulator.jpg" width="1600" height="1087" loading="lazy" decoding="async"
-                 alt="+1 Speed Simulator Template in-game — rows of win-gated multiplier pads from x2 to x300, rebirth and trails buttons, a custom speed input, a timed starter pack offer, speed purchase buttons and a level progress bar.">
+      <!-- Launch! -->
+      <article class="proj proj-wide reveal">
+        <div class="proj-shots">
+          <button class="shot-btn" data-full="media/launch-gameplay.jpg" aria-label="Enlarge screenshot: Launch! gameplay">
+            <img src="media/launch-gameplay.jpg" width="1600" height="1093" loading="lazy" decoding="async"
+                 alt="Launch! gameplay — the player rockets over a green castle landscape while five enemy types hang in the air ahead: a parachute rider, a life-ring, a rocket rider, a plane and a hammer.">
           </button>
-        </figure>
-
-        <p class="card-lede">A finished simulator meant to be reskinned and shipped, not a prototype.</p>
-
-        <ul class="spec">
-          <li>Levels, rebirth with permanent multipliers, six stacking multiplier sources</li>
-          <li>11-tier upgrade pad shop, five premium treadmill tiers, seven trails, win pads</li>
-          <li>Speed packs, a Robux multiplier ladder to ×2048, starter pack, stage teleports</li>
-          <li>ProfileStore with session locking, global leaderboards, spin wheel, tutorial,
-              Cmdr admin console</li>
-          <li>25 services, 31 controllers, single entry points, documented</li>
-        </ul>
+          <button class="shot-btn" data-full="media/launch-storm.jpg" aria-label="Enlarge screenshot: Launch! storm biome">
+            <img src="media/launch-storm.jpg" width="1600" height="1090" loading="lazy" decoding="async"
+                 alt="Launch! gameplay in a dark storm biome above an ocean of pirate ships, with enemies suspended in the air ahead.">
+          </button>
+          <button class="shot-btn" data-full="media/launch-upgrades.jpg" aria-label="Enlarge screenshot: Launch! upgrades menu">
+            <img src="media/launch-upgrades.jpg" width="1600" height="1093" loading="lazy" decoding="async"
+                 alt="Launch! player upgrades menu — a grid of upgrade tiles with levels out of 50, a detail panel, and a sidebar with Player Upgrades, Enemy Upgrades and a locked Ascension Tree.">
+          </button>
+        </div>
+        <div class="proj-body">
+          <span class="card-kind">Roblox game</span>
+          <h3>Launch!</h3>
+          <p class="proj-lede">
+            You get shot out of a cannon and everything after is momentum. Slam to turn height
+            into speed, take enemies' rockets and planes, break through walls into the next biome.
+          </p>
+          <ul class="spec spec-grid">
+            <li>Custom physics — per-map gravity, friction, bounce, speed caps</li>
+            <li>Treadmill world streaming, four pooled chunks, biomes swapped mid-run</li>
+            <li>Ten movement states on one dispatcher</li>
+            <li>Voxel destruction with an object cache</li>
+            <li>Cross-server ranked duels — MemoryStore, MessagingService, medal-based ELO</li>
+            <li>Server-authoritative saving — schema migration, <code>UpdateAsync</code>
+                merge-on-save, <code>BindToClose</code> flushing</li>
+          </ul>
+          <a class="btn btn-outline btn-sm" href="https://www.roblox.com/games/92546724840766/Launch" target="_blank" rel="noopener">
+            Play Launch!
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </article>
 
-      <article class="card reveal">
-        <header class="card-head">
-          <div>
-            <span class="card-kind">Module</span>
-            <h3>Keyboard Module</h3>
-          </div>
-        </header>
+      <!-- Idle Breakout -->
+      <article class="proj reveal">
+        <div class="proj-shots">
+          <button class="shot-btn" data-full="media/idle-breakout.png" aria-label="Enlarge screenshot: Idle Breakout">
+            <img src="media/idle-breakout.png" width="1692" height="1152" loading="lazy" decoding="async"
+                 alt="Idle Breakout — a pixel-art board of coloured blocks labelled with health multipliers above an arena of roughly ninety bouncing balls, with a Welcome Back offline-earnings panel.">
+          </button>
+        </div>
+        <div class="proj-body">
+          <span class="card-kind">Roblox game</span>
+          <h3>Idle Breakout</h3>
+          <p class="proj-lede">
+            A recreation of the Coolmath Games idle classic, built entirely in Roblox's 2D GUI
+            layer — no parts, no character, no imported art.
+          </p>
+          <ul class="spec">
+            <li>Instance-free simulation — fixed timestep, circle-vs-AABB, grid broadphase</li>
+            <li>Pooled rendering, flat cost at five balls or four hundred</li>
+            <li>Seven ball types and thirteen level layouts held as data</li>
+            <li>Server-authoritative purchases, economy invariant asserted at load</li>
+          </ul>
+          <a class="btn btn-outline btn-sm" href="https://www.roblox.com/games/87259589692104/Idle-Breakout" target="_blank" rel="noopener">
+            Play Idle Breakout
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
 
-        <figure class="shot shot-inline">
-          <button class="shot-btn" data-full="media/keyboard-module.jpg"
-                  aria-label="Enlarge screenshot: Keyboard Module">
+      <!-- Flight -->
+      <article class="proj reveal">
+        <div class="proj-shots">
+          <button class="shot-btn" data-full="media/flight.jpg" aria-label="Enlarge screenshot: Flight">
+            <img src="media/flight.jpg" width="1600" height="855" loading="lazy" decoding="async"
+                 alt="Flight gameplay — the player flies between tall grey towers trimmed with cyan, pink and yellow neon above a lit street grid, with speed and altitude readouts.">
+          </button>
+        </div>
+        <div class="proj-body">
+          <span class="card-kind">Prototype</span>
+          <h3>Flight</h3>
+          <p class="proj-lede">
+            You are the aircraft, not a vehicle. Six-axis character flight over a procedural
+            neon city.
+          </p>
+          <ul class="spec">
+            <li>Custom flight controller — hold-to-fly, hovering, bank-to-turn, afterburner,
+                speed-scaled lateral thrust</li>
+            <li>Camera bound to input, not the physics body — an <code>AlignOrientation</code>
+                constraint chases attitude on the rigid body, so collisions stay physical</li>
+            <li>Procedural city — 196 towers from a seeded RNG, height falloff, neon trim</li>
+            <li>Chase camera — occlusion raycasting, speed-scaled FOV, scroll zoom</li>
+          </ul>
+          <a class="btn btn-outline btn-sm" href="https://www.roblox.com/games/71453215845368/Flight" target="_blank" rel="noopener">
+            Try Flight
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Momentum Movement -->
+      <article class="proj reveal">
+        <div class="proj-shots">
+          <button class="shot-btn" data-full="media/movement.jpg" aria-label="Enlarge screenshot: Momentum Movement test place">
+            <img src="media/movement.jpg" width="1600" height="975" loading="lazy" decoding="async"
+                 alt="The movement system's test place — a character on a green baseplate beside stepped grey ramps used for slope traversal testing.">
+          </button>
+        </div>
+        <div class="proj-body">
+          <span class="card-kind">System</span>
+          <h3>Momentum Movement</h3>
+          <p class="proj-lede">
+            A first-person controller that replaces Roblox's Humanoid physics entirely, for
+            momentum-based FPS movement in the Source lineage.
+          </p>
+          <ul class="spec">
+            <li>Humanoid disabled, physics rebuilt — custom gravity, single-box collider,
+                P-controller hover for ground contact and slopes</li>
+            <li>Air strafing, slide chaining, slope acceleration — chains build 22 → ~45 studs/s
+                and converge instead of running away</li>
+            <li>Framerate-independent deceleration — friction and camera springs solved in
+                closed form, identical at 30, 60 and 240 fps</li>
+            <li>First-person camera — speed-scaled FOV, strafe roll, spring-damped landings,
+                with no writes to player aim</li>
+          </ul>
+          <a class="btn btn-outline btn-sm" href="https://www.roblox.com/games/115827296371939/Rivals-Movement-System" target="_blank" rel="noopener">
+            Try the movement
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- +1 Speed Simulator Template -->
+      <article class="proj reveal">
+        <div class="proj-shots">
+          <button class="shot-btn" data-full="media/template-simulator.jpg" aria-label="Enlarge screenshot: +1 Speed Simulator Template">
+            <img src="media/template-simulator.jpg" width="1600" height="1087" loading="lazy" decoding="async"
+                 alt="+1 Speed Simulator Template in-game — rows of win-gated multiplier pads, rebirth and trails buttons, a custom speed input, a timed starter pack offer and a level progress bar.">
+          </button>
+        </div>
+        <div class="proj-body">
+          <span class="card-kind">Template</span>
+          <h3>+1 Speed Simulator Template</h3>
+          <p class="proj-lede">
+            A finished simulator meant to be reskinned and shipped, not a prototype.
+          </p>
+          <ul class="spec">
+            <li>Levels, rebirth with permanent multipliers, six stacking multiplier sources</li>
+            <li>11-tier upgrade pad shop, five treadmill tiers, seven trails, win pads</li>
+            <li>Speed packs, a Robux multiplier ladder to ×2048, starter pack, stage teleports</li>
+            <li>163 scripts — 25 services, 31 controllers, ProfileStore, documented</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Keyboard Module -->
+      <article class="proj reveal">
+        <div class="proj-shots">
+          <button class="shot-btn" data-full="media/keyboard-module.jpg" aria-label="Enlarge screenshot: Keyboard Module">
             <img src="media/keyboard-module.jpg" width="1600" height="1085" loading="lazy" decoding="async"
                  alt="The Keyboard Module test place — the player stands among four large grids of lettered keys rendered as physical parts, in stone, blue, green and red.">
           </button>
-        </figure>
-
-        <p class="card-lede">
-          Input handling for keyboard-driven games, where response time is the whole experience.
-        </p>
-
-        <a class="btn btn-outline" href="https://www.roblox.com/games/126819865389590/Keyboard-Module" target="_blank" rel="noopener">
-          View on Roblox
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        </div>
+        <div class="proj-body">
+          <span class="card-kind">Module</span>
+          <h3>Keyboard Module</h3>
+          <p class="proj-lede">
+            Input handling for keyboard-driven games, where response time is the whole experience.
+          </p>
+          <a class="btn btn-outline btn-sm" href="https://www.roblox.com/games/126819865389590/Keyboard-Module" target="_blank" rel="noopener">
+            View on Roblox
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </article>
 
     </div>
@@ -444,6 +361,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js?v=10"></script>
+<script src="main.js?v=11"></script>
 </body>
 </html>
