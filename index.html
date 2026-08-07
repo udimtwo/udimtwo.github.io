@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- ?v= is a cache buster: bump it whenever style.css or main.js changes, so returning
      visitors can't run stale CSS/JS against fresh HTML. See README. -->
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=10">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 <body>
@@ -38,6 +38,7 @@
     <a href="#launch" data-nav>Launch!</a>
     <a href="#idle" data-nav>Idle Breakout</a>
     <a href="#flight" data-nav>Flight</a>
+    <a href="#movement" data-nav>Movement</a>
     <a href="#work" data-nav>Work</a>
     <a href="#contact" data-nav>Contact</a>
   </nav>
@@ -260,8 +261,52 @@
   </div>
 </section>
 
+<!-- ───────────────────────── MOMENTUM MOVEMENT ───────────────────────── -->
+<section class="section section-alt" id="movement">
+  <div class="wrap">
+
+    <div class="sec-head reveal">
+      <span class="sec-index">System</span>
+      <h2>Momentum Movement</h2>
+      <p class="sec-lede">
+        A first-person controller that replaces Roblox's Humanoid physics entirely, for
+        momentum-based FPS movement in the Source lineage.
+      </p>
+      <div class="sec-actions">
+        <a class="btn btn-primary" href="https://www.roblox.com/games/115827296371939/Rivals-Movement-System" target="_blank" rel="noopener">
+          Try the movement
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="shots reveal">
+      <figure class="shot shot-lead">
+        <button class="shot-btn" data-full="media/movement.jpg"
+                aria-label="Enlarge screenshot: Momentum Movement test place">
+          <img src="media/movement.jpg" width="1600" height="975" loading="lazy" decoding="async"
+               alt="The movement system's test place — a character on a green baseplate beside stepped grey ramps used for slope traversal testing, with two players connected.">
+        </button>
+        <figcaption>The slope and ramp testbed.</figcaption>
+      </figure>
+    </div>
+
+    <ul class="spec spec-grid reveal">
+      <li>Humanoid state machine disabled, character physics rebuilt — custom gravity,
+          single-box collider, P-controller hover for ground contact and slopes</li>
+      <li>Quake/Source-style air strafing, slide chaining and slope acceleration — chains build
+          22 → ~45 studs/s and converge instead of running away</li>
+      <li>Framerate-independent deceleration — friction and camera springs solved in closed
+          form, identical at 30, 60 and 240 fps</li>
+      <li>First-person camera — speed-scaled FOV, strafe roll, spring-damped landing impacts,
+          distance-phased head bob, with no writes to player aim</li>
+    </ul>
+
+  </div>
+</section>
+
 <!-- ───────────────────────── OTHER WORK ───────────────────────── -->
-<section class="section section-alt" id="work">
+<section class="section" id="work">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Templates &amp; modules</span>
@@ -330,7 +375,7 @@
 </section>
 
 <!-- ───────────────────────── CONTACT ───────────────────────── -->
-<section class="section" id="contact">
+<section class="section section-alt" id="contact">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-index">Get in touch</span>
@@ -399,6 +444,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="main.js?v=9"></script>
+<script src="main.js?v=10"></script>
 </body>
 </html>
